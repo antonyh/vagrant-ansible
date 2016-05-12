@@ -1,0 +1,14 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+    - name: jessie backports repo
+      apt_repository: repo='deb http://http.debian.net/debian jessie-backports main' state=present
+    - name: update apt cache
+      apt: update_cache=yes
+    - name: install htop
+      apt: name=htop state=present
+    - name: install mysql
+      apt: name=strace state=present
+    - name: install strace
+      apt: name=openjdk-8-jdk state=present
